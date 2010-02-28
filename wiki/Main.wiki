@@ -1,0 +1,12 @@
+Aspersa is a very simple collection of command-line tools, written in scripting languages.  There are no releases, nothing to install, nothing to configure.
+
+To download them, just use wget, or the equivalent on your system:
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
+wget http://aspersa.googlecode.com/svn/trunk/iodump
+wget http://aspersa.googlecode.com/svn/trunk/mext
+wget http://aspersa.googlecode.com/svn/trunk/mext2
+wget http://aspersa.googlecode.com/svn/trunk/rel
+wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
+}}}
