@@ -2,11 +2,15 @@ Aspersa is a very simple collection of bare-bones command-line tools for GNU/Lin
 
 = align =
 
+Columnizes input.  Useful for reformatting iostat or vmstat, for example.
+
 {{{
-wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
+wget http://aspersa.googlecode.com/svn/trunk/align
 }}}
 
 = bt-aggregate =
+
+Summarizes output of GDB backtraces.  Useful as a [http://www.poormansprofiler.org/ poor man's profiler].
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
@@ -14,17 +18,23 @@ wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
 
 = collect =
 
+Collect information about a system to aid in troubleshooting.  Useful to execute from 'stalk' when a bad condition is detected.
+
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/collect
 }}}
 
 = iodump =
 
+Get per-process IO statistics on older Linux kernels.  See [http://www.xaprb.com/blog/2009/08/23/how-to-find-per-process-io-statistics-on-linux/ this blog post].
+
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/iodump
 }}}
 
 = mext and mext2 =
+
+Format and relative-ize output from `mysqladmin extended-status` for easy consumption.  See [http://www.xaprb.com/blog/2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/ this blog post].  mext2 is a rewrite that tries to work around bugs in getargs on different operating systems, but it isn't really supported or maintained.
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/mext
@@ -33,11 +43,15 @@ wget http://aspersa.googlecode.com/svn/trunk/mext2
 
 = rel =
 
+Subtract numbers in each line of text from the line before, so you can see incremental differences.  Useful for tasks such as interpreting raw data from /proc/diskstats.  See [http://www.xaprb.com/blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/ this blog post].
+
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/rel
 }}}
 
 = snoop-to-tcpdump =
+
+Translate Solaris's snoop output into something like tcpdump's output, so you can use mk-query-digest to sniff MySQL and other types of traffic on Solaris.
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
@@ -45,13 +59,15 @@ wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
 
 = stalk =
 
+Watch for something to happen and execute a script when it does.  By default, it watches a MySQL server for too many connections and executes 'collect'.  See [http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/ this blog post].
+
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/stalk
 }}}
 
 = summary =
 
-This tool creates a report on important parts of your system so you can get an overview of it quickly.  It goes into detail on certain very important aspects.
+Get a report on important parts of your system so you can get an overview of it quickly.
 
 Goals:
 
