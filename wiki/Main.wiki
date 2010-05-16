@@ -1,12 +1,124 @@
-Aspersa is a very simple collection of command-line tools, written in scripting languages.  There are no releases, nothing to install, nothing to configure.
+Aspersa is a very simple collection of bare-bones command-line tools for GNU/Linux, written in scripting languages.  There are no releases, nothing to install, nothing to configure.  To download them, just use wget, or the equivalent on your system.
 
-To download them, just use wget, or the equivalent on your system:
+= align =
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
+}}}
+
+= bt-aggregate =
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate
+}}}
+
+= collect =
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/collect
+}}}
+
+= iodump =
+
+{{{
 wget http://aspersa.googlecode.com/svn/trunk/iodump
+}}}
+
+= mext and mext2 =
+
+{{{
 wget http://aspersa.googlecode.com/svn/trunk/mext
 wget http://aspersa.googlecode.com/svn/trunk/mext2
+}}}
+
+= rel =
+
+{{{
 wget http://aspersa.googlecode.com/svn/trunk/rel
+}}}
+
+= snoop-to-tcpdump =
+
+{{{
 wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
+}}}
+
+= stalk =
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/stalk
+}}}
+
+= summary =
+
+This tool creates a report on important parts of your system so you can get an overview of it quickly.  It goes into detail on certain very important aspects.
+
+Goals:
+
+  * Give a quick view so you can decide what to dig into further.
+  * Compact output; try not to line-wrap on an 80-character terminal.
+  * Be as diff-able as possible so you can compare systems (or changes to the same system).
+  * Work well on GNU/Linux.
+  * Require only bare-bones tools such as 'sed' and 'grep' to be available.
+
+Sample output (from the developer's laptop):
+
+{{{
+# Aspersa System Summary Report ##############################
+Current date | 2010-05-16 19:29:00 UTC (local TZ: EDT -0400)
+    Hostname | ginger
+      Uptime |  5:45,  2 users,  load average: 0.00, 0.02, 0.00
+      System | ASUSTeK Computer Inc. UL30A v1.0 (Notebook)
+     Release | Fedora release 12 (Constantine)
+      Kernel | 2.6.32.11-99.fc12.i686.PAE
+Architecture | 64-bit CPU, 32-bit OS
+   Threading | NPTL 2.11.1
+ Compiled by | GNU CC version 4.4.3 20100127 (Red Hat 4.4.3-4).
+     SELinux | Disabled
+# Processor ##################################################
+  Processors | 1 physical, 2 cores, 2 virtual, no hyperthreading
+      Speeds | 2x1300.000
+      Models | 2xGenuine Intel(R) CPU U7300 @ 1.30GHz
+      Caches | 2x3072 KB
+# Memory #####################################################
+       Total | 3.89G
+        Free | 2.92G
+        Used | 1002.67M physical + 0.00k swap = 1002.67M virtual
+     Buffers | 122.64M
+      Caches | 516.11M
+        Used | 487.27M used according to 'ps -eo rss'
+  Swappiness | vm.swappiness = 60
+ DirtyPolicy | vm.dirty_ratio = 20 vm.dirty_background_ratio = 10
+ DirtyStatus | vm.dirty_bytes = 0 vm.dirty_background_bytes = 0
+       DIMMs |     Size    Speed Form Factor Type       Type Detail
+             | ======== ======== =========== ========== ===========
+                2048 MB  800 MHz SODIMM      Other      Synchronous
+                2048 MB  800 MHz SODIMM      Other      Synchronous
+# Mounted Filesystems ########################################
+  Filesystem                    Size Used Type  Opts          Mountpoint
+  /dev/mapper/vg_ginger-lv_root 454G   6% ext4  (rw)          /
+  /dev/sda1                     194M  31% ext4  (rw)          /boot
+  tmpfs                         2.0G   1% tmpfs (rw)          /dev/shm
+# Disk Schedulers And Queue Size #############################
+         sda | [cfq] 128
+# LVM Volumes ################################################
+  LV      VG        Attr   LSize   Origin Snap%  Move Log Copy%  Convert
+  lv_root vg_ginger -wi-ao 460.64G                                      
+  lv_swap vg_ginger -wi-ao   4.92G                                      
+# RAID Controller ############################################
+  Controller | No RAID controller detected
+# Virtualization #############################################
+  Technology | No virtualization detected
+# Top Processes ##############################################
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 1835 root      20   0 88520  32m  11m S  3.9  0.8   4:48.44 Xorg
+ 5410 root      20   0  2552 1008  744 R  3.9  0.0   0:00.02 top
+    1 root      20   0  2024  796  580 S  0.0  0.0   0:01.30 init
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0
+    4 root      20   0     0    0    0 S  0.0  0.0   0:05.30 ksoftirqd/0
+    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0
+    9 root      20   0     0    0    0 S  0.0  0.0   0:00.13 events/0
+# The End ####################################################
 }}}
