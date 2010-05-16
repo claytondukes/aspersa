@@ -69,6 +69,10 @@ wget http://aspersa.googlecode.com/svn/trunk/stalk
 
 Get a report on important parts of your system so you can get an overview of it quickly.
 
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/summary
+}}}
+
 Goals:
 
   * Give a quick view so you can decide what to dig into further.
