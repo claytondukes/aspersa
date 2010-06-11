@@ -40,37 +40,12 @@ Format and relative-ize output from `mysqladmin extended-status` for easy consum
 wget http://aspersa.googlecode.com/svn/trunk/mext
 wget http://aspersa.googlecode.com/svn/trunk/mext2
 }}}
-
-= rel =
-
-Subtract numbers in each line of text from the line before, so you can see incremental differences.  Useful for tasks such as interpreting raw data from /proc/diskstats.  See [http://www.xaprb.com/blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/ this blog post].
-
-{{{
-wget http://aspersa.googlecode.com/svn/trunk/rel
-}}}
-
-= snoop-to-tcpdump =
-
-Translate Solaris's snoop output into something like tcpdump's output, so you can use mk-query-digest to sniff MySQL and other types of traffic on Solaris.
-
-{{{
-wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
-}}}
-
-= stalk =
-
-Watch for something to happen and execute a script when it does.  By default, it watches a MySQL server for too many connections and executes 'collect'.  See [http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/ this blog post].
-
-{{{
-wget http://aspersa.googlecode.com/svn/trunk/stalk
-}}}
-
-= summary =
+= mysql-summary =
 
 Get a report on important parts of your system so you can get an overview of it quickly.
 
 {{{
-wget http://aspersa.googlecode.com/svn/trunk/summary
+wget http://aspersa.googlecode.com/svn/trunk/mysql-summary
 }}}
 
 Goals:
@@ -226,4 +201,28 @@ Architecture | 64-bit CPU, 64-bit OS
     6 root      RT  -5     0    0    0 S    0  0.0   0:07.08 migration/1
     7 root      15  -5     0    0    0 S    0  0.0   0:06.08 ksoftirqd/1
 # The End ####################################################
+}}}
+
+= rel =
+
+Subtract numbers in each line of text from the line before, so you can see incremental differences.  Useful for tasks such as interpreting raw data from /proc/diskstats.  See [http://www.xaprb.com/blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/ this blog post].
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/rel
+}}}
+
+= snoop-to-tcpdump =
+
+Translate Solaris's snoop output into something like tcpdump's output, so you can use mk-query-digest to sniff MySQL and other types of traffic on Solaris.
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump
+}}}
+
+= stalk =
+
+Watch for something to happen and execute a script when it does.  By default, it watches a MySQL server for too many connections and executes 'collect'.  See [http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/ this blog post].
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/stalk
 }}}
