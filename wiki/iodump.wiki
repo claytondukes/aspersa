@@ -1,0 +1,7 @@
+﻿= iodump =
+
+Get per-process IO statistics on older Linux kernels.  See [http://www.xaprb.com/blog/2009/08/23/how-to-find-per-process-io-statistics-on-linux/ this blog post].
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/iodump
+}}}

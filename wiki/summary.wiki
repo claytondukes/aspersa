@@ -1,0 +1,162 @@
+﻿= summary =
+
+Get a report on important parts of your system so you can get an overview of it quickly.
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/summary
+}}}
+
+Goals:
+
+  * Give a quick view so you can decide what to dig into further.
+  * Compact output; try not to line-wrap on an 80-character terminal.
+  * Be as diff-able as possible so you can compare systems (or changes to the same system).
+  * Work well on GNU/Linux.
+  * Require only bare-bones tools such as 'sed' and 'grep' to be available.
+
+Sample output (from the developer's laptop):
+
+{{{
+# Aspersa System Summary Report ##############################
+Current date | 2010-05-16 19:29:00 UTC (local TZ: EDT -0400)
+    Hostname | ginger
+      Uptime |  5:45,  2 users,  load average: 0.00, 0.02, 0.00
+      System | ASUSTeK Computer Inc. UL30A v1.0 (Notebook)
+     Release | Fedora release 12 (Constantine)
+      Kernel | 2.6.32.11-99.fc12.i686.PAE
+Architecture | 64-bit CPU, 32-bit OS
+   Threading | NPTL 2.11.1
+ Compiled by | GNU CC version 4.4.3 20100127 (Red Hat 4.4.3-4).
+     SELinux | Disabled
+# Processor ##################################################
+  Processors | 1 physical, 2 cores, 2 virtual, no hyperthreading
+      Speeds | 2x1300.000
+      Models | 2xGenuine Intel(R) CPU U7300 @ 1.30GHz
+      Caches | 2x3072 KB
+# Memory #####################################################
+       Total | 3.89G
+        Free | 2.92G
+        Used | 1002.67M physical + 0.00k swap = 1002.67M virtual
+     Buffers | 122.64M
+      Caches | 516.11M
+        Used | 487.27M used according to 'ps -eo rss'
+  Swappiness | vm.swappiness = 60
+ DirtyPolicy | vm.dirty_ratio = 20 vm.dirty_background_ratio = 10
+ DirtyStatus | vm.dirty_bytes = 0 vm.dirty_background_bytes = 0
+       DIMMs |     Size    Speed Form Factor Type       Type Detail
+             | ======== ======== =========== ========== ===========
+                2048 MB  800 MHz SODIMM      Other      Synchronous
+                2048 MB  800 MHz SODIMM      Other      Synchronous
+# Mounted Filesystems ########################################
+  Filesystem                    Size Used Type  Opts          Mountpoint
+  /dev/mapper/vg_ginger-lv_root 454G   6% ext4  (rw)          /
+  /dev/sda1                     194M  31% ext4  (rw)          /boot
+  tmpfs                         2.0G   1% tmpfs (rw)          /dev/shm
+# Disk Schedulers And Queue Size #############################
+         sda | [cfq] 128
+# LVM Volumes ################################################
+  LV      VG        Attr   LSize   Origin Snap%  Move Log Copy%  Convert
+  lv_root vg_ginger -wi-ao 460.64G                                      
+  lv_swap vg_ginger -wi-ao   4.92G                                      
+# RAID Controller ############################################
+  Controller | No RAID controller detected
+# Virtualization #############################################
+  Technology | No virtualization detected
+# Top Processes ##############################################
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 1835 root      20   0 88520  32m  11m S  3.9  0.8   4:48.44 Xorg
+ 5410 root      20   0  2552 1008  744 R  3.9  0.0   0:00.02 top
+    1 root      20   0  2024  796  580 S  0.0  0.0   0:01.30 init
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0
+    4 root      20   0     0    0    0 S  0.0  0.0   0:05.30 ksoftirqd/0
+    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0
+    9 root      20   0     0    0    0 S  0.0  0.0   0:00.13 events/0
+# The End ####################################################
+}}}
+
+Here's another report, this one from a real server:
+
+{{{
+# Aspersa System Summary Report ##############################
+Current date | 2010-05-17 00:53:20 UTC (local TZ: EDT -0400)
+    Hostname | <redacted>
+      Uptime | 36 days, 21:06,  1 user,  load average: 0.75, 0.47, 0.44
+      System | Dell Inc. PowerEdge 2950 vNot Specified ()
+     Release | Fedora release 8 (Werewolf)
+      Kernel | 2.6.26.8-57.fc8
+Architecture | 64-bit CPU, 64-bit OS
+   Threading | NPTL 2.7
+ Compiled by | GNU CC version 4.1.2 20070925 (Red Hat 4.1.2-32).
+     SELinux | Disabled
+# Processor ##################################################
+  Processors | 2 physical, 8 cores, 8 virtual, no hyperthreading
+      Speeds | 8x1861.911
+      Models | 8xIntel(R) Xeon(R) CPU E5320 @ 1.86GHz
+      Caches | 8x4096 KB
+# Memory #####################################################
+       Total | 15.71G
+        Free | 254.74M
+        Used | 15.46G physical + 68.00k swap = 15.46G virtual
+     Buffers | 364.44M
+      Caches | 12.94G
+        Used | 1.94G used according to 'ps -eo rss'
+  Swappiness | vm.swappiness = 60
+ DirtyPolicy | vm.dirty_ratio = 10 vm.dirty_background_ratio = 5
+       DIMMs |     Size    Speed Form Factor Type       Type Detail
+             | ======== ======== =========== ========== ===========
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+                2048 MB 667 MHz (1.5 ns) <OUT OF SPEC> <OUT OF SPEC> Synchronous
+# Mounted Filesystems ########################################
+  Filesystem                    Size Used Type  Opts          Mountpoint
+  /dev/mapper/VolGroup00-LogVol00 62G  56% ext3  (rw)          /
+  /dev/mapper/VolGroup01-MySQLData00 67G  20% ext3  (rw)          /var/lib/mysql
+  /dev/sda3                     190M  11% ext3  (rw)          /boot
+  tmpfs                         7.9G   0% tmpfs (rw)          /dev/shm
+# Disk Schedulers And Queue Size #############################
+         sda | [cfq] 128
+         sdb | [cfq] 128
+# LVM Volumes ################################################
+  LV          VG         Attr   LSize  Origin Snap%  Move Log Copy% 
+  LogVol00    VolGroup00 -wi-ao 63.50G                              
+  LogVol01    VolGroup00 -wi-ao  1.94G                              
+  MySQLData00 VolGroup01 -wi-ao 67.75G                              
+# RAID Controller ############################################
+  Controller | LSI Logic MegaRAID
+       Model | PERC 6/i Integrated, PCIE interface, 8 ports
+       Cache | 256MB Memory, BBU Present
+         BBU | 95% Charged, Temperature 18C, isSOHGood=Yes
+
+  VirtualDev Size      RAID Level Disks SpnDpth Stripe Status  Cache
+  ========== ========= ========== ===== ======= ====== ======= =========
+  0(no name) 69376MB   1 (1-0-0)      2     1-1   64kB Optimal WB, no RA
+  1(no name) 69376MB   1 (1-0-0)      2     1-1   64kB Optimal WB, no RA
+
+  PhysiclDev Type State   Errors Vendor  Model        Size
+  ========== ==== ======= ====== ======= ============ ===========
+  Hard Disk  SAS  Online   0/0/0 SEAGATE ST373455SS   70007MB
+  Hard Disk  SAS  Online   0/0/0 SEAGATE ST373455SS   70007MB
+  Hard Disk  SAS  Online   0/0/0 SEAGATE ST373455SS   70007MB
+  Hard Disk  SAS  Online   0/0/0 SEAGATE ST373455SS   70007MB
+# Virtualization #############################################
+  Technology | No virtualization detected
+# Top Processes ##############################################
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+13200 mysql     20   0 2417m 1.7g 4976 S    2 11.0   2588:27 mysqld
+    1 root      20   0 10308  716  600 S    0  0.0   0:16.06 init
+    2 root      15  -5     0    0    0 S    0  0.0   0:00.00 kthreadd
+    3 root      RT  -5     0    0    0 S    0  0.0   0:13.76 migration/0
+    4 root      15  -5     0    0    0 S    0  0.0   0:00.42 ksoftirqd/0
+    5 root      RT  -5     0    0    0 S    0  0.0   0:07.22 watchdog/0
+    6 root      RT  -5     0    0    0 S    0  0.0   0:07.08 migration/1
+    7 root      15  -5     0    0    0 S    0  0.0   0:06.08 ksoftirqd/1
+# The End ####################################################
+}}}

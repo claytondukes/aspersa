@@ -1,4 +1,15 @@
-Comments on the wiki?  Bring them up on [http://groups.google.com/group/aspersa-discussion the mailing list].  Want to edit the wiki?  Ask on the mailing list and we'll give you permission.
+﻿Comments on the wiki?  Bring them up on [http://groups.google.com/group/aspersa-discussion the mailing list].  Want to edit the wiki?  Ask on the mailing list and we'll give you permission.
+
+  * [align]
+  * [bt-aggregate]
+  * [collect]
+  * [iodump]
+  * [mext]
+  * [mysql-summary]
+  * [rel]
+  * [snoop-to-tcpdump]
+  * [stalk]
+  * [summary]
 
   * [http://code.google.com/p/aspersa/w/list List & Search Wiki Pages]
   * [http://code.google.com/p/aspersa/w/edit New Wiki Page] (requires SVN commit rights, inquire on the mailing list)

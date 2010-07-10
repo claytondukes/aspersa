@@ -1,0 +1,20 @@
+﻿= mysql-summary =
+
+Get a report on important parts of your MySQL server so you can get an overview of it quickly.
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/mysql-summary
+}}}
+
+Goals:
+
+  * Give a quick view so you can decide what to dig into further.
+  * Compact output; try not to line-wrap on an 80-character terminal.
+  * Be as diff-able as possible so you can compare systems (or changes to the same system).
+  * Work well on GNU/Linux.
+  * Require only bare-bones tools such as 'sed' and 'grep' to be available.
+
+Sample output (from the developer's laptop):
+
+{{{
+}}}

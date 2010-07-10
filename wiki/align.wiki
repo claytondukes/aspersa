@@ -1,0 +1,7 @@
+﻿= align =
+
+Columnizes input.  Useful for reformatting iostat or vmstat, for example.
+
+{{{
+wget http://aspersa.googlecode.com/svn/trunk/align
+}}}
