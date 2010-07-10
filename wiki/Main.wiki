@@ -1,1 +1,1 @@
-﻿Aspersa is a very simple collection of bare-bones command-line tools for GNU/Linux, written in scripting languages.  There are no releases, nothing to install, nothing to configure.  To download them, just use wget, or the equivalent on your system.
+﻿Aspersa is a very simple collection of bare-bones command-line tools for GNU/Linux, written in scripting languages.  There are no releases, nothing to install, nothing to configure.  To download them, just use wget, or the equivalent on your system.  See the individual tools in the sidebar.
