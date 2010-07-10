@@ -1,6 +1,4 @@
-﻿= bt-aggregate =
-
-Summarizes output of GDB backtraces.  Useful as a [http://www.poormansprofiler.org/ poor man's profiler].
+﻿Summarizes output of GDB backtraces.  Useful as a [http://www.poormansprofiler.org/ poor man's profiler].
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/bt-aggregate

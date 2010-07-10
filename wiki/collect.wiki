@@ -1,6 +1,4 @@
-﻿= collect =
-
-Collect information about a system to aid in troubleshooting.  Useful to execute from 'stalk' when a bad condition is detected.
+﻿Collect information about a system to aid in troubleshooting.  Useful to execute from 'stalk' when a bad condition is detected.
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/collect

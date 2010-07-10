@@ -1,6 +1,4 @@
-﻿= snoop-to-tcpdump =
-
-Translate Solaris's snoop output into something like tcpdump's output, so you can use mk-query-digest to sniff MySQL and other types of traffic on Solaris.
+﻿Translate Solaris's snoop output into something like tcpdump's output, so you can use mk-query-digest to sniff MySQL and other types of traffic on Solaris.
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/snoop-to-tcpdump

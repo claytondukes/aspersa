@@ -1,6 +1,4 @@
-﻿= mysql-summary =
-
-Get a report on important parts of your MySQL server so you can get an overview of it quickly.
+﻿Get a report on important parts of your MySQL server so you can get an overview of it quickly.
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/mysql-summary

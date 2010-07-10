@@ -1,6 +1,4 @@
-﻿= stalk =
-
-Watch for something to happen and execute a script when it does.  By default, it watches a MySQL server for too many connections and executes 'collect'.  See [http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/ this blog post].
+﻿Watch for something to happen and execute a script when it does.  By default, it watches a MySQL server for too many connections and executes 'collect'.  See [http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/ this blog post].
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/stalk
