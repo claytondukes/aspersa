@@ -2,6 +2,9 @@
 
 {{{
 wget http://aspersa.googlecode.com/svn/trunk/summary
+bash summary
+# ONE-STEP METHOD ###################
+wget -O- http://aspersa.googlecode.com/svn/trunk/summary |bash
 }}}
 
 Goals:
@@ -11,6 +14,13 @@ Goals:
   * Be as diff-able as possible so you can compare systems (or changes to the same system).
   * Work well on GNU/Linux.
   * Require only bare-bones tools such as 'sed' and 'grep' to be available.
+
+Usage:
+
+  * Just wget and execute (see top of page)
+  * Set ASPERSA_SKIP environment variable to control it (command-line options can't work with one-step execution):
+    * It is a comma-separated string, with any combination of options allowed.
+    * Possible options are MOUNT,NETWORK,PROCESS
 
 Sample output (from the developer's laptop):
 
