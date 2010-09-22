@@ -44,7 +44,7 @@ code {
 	border-left: 6px solid #CCC;
 	color: #666;
 	display: block;
-	font: normal 1em Tahoma,sans-serif;
+	font: normal 1em Courier,monospace;
 	line-height: 1.6em;
 	margin-bottom: 12px;
 	padding: 8px 10px;
@@ -138,6 +138,7 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 }
 .content li {
 	margin-left: 18px;
+   list-style: disc;
 }
 .content p {font-family: "Lucida Sans Unicode",sans-serif;}
 
