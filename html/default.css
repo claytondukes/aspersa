@@ -177,7 +177,7 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 .footer {
 	background: #949490;
 	color: #F7F7F2;
-	font: bold 1em sans-serif;
+	font: normal 1em sans-serif;
 	margin-top: 5px;
 	padding: 10px 12px;
 }
