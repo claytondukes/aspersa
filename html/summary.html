@@ -159,7 +159,22 @@ dentry-state | 52867 47869 45 0  0  0
   Controller | Fusion-MPT SAS
 </code>
 
-<p>The <em>summary</em> tool can detect a variety of RAID controllers by examining <em>lspci</em> and <em>dmesg</em> information.  If the controller software is installed on the system, in many cases it is able to execute status commands and show a summary of the RAID controller's status and configuration.  If your RAID controller is not supported, please contribute information about it so we can add support for it to this tool.</p>
+<p>The <em>summary</em> tool can detect a variety of RAID controllers by examining <em>lspci</em> and <em>dmesg</em> information.  If the controller software is installed on the system, in many cases it is able to execute status commands and show a summary of the RAID controller's status and configuration:</p>
+
+<table>
+<thead>
+  <tr><th>Controller</th><th>Detected?</th><th>Status/Config?</th></tr>
+</thead>
+<tbody>
+  <tr><td>LSI Logic MegaRAID SAS</td><td style="text-align:right">Y</td><td style="text-align:right">Y</td></tr>
+  <tr><td>Fusion-MPT SAS        </td><td style="text-align:right">Y</td><td style="text-align:right"> </td></tr>
+  <tr><td>AACRAID               </td><td style="text-align:right">Y</td><td style="text-align:right">Y</td></tr>
+  <tr><td>HP Smart Array        </td><td style="text-align:right">Y</td><td style="text-align:right">Y</td></tr>
+  <tr><td>3Ware                 </td><td style="text-align:right">Y</td><td style="text-align:right"> </td></tr>
+</tbody>
+</table>
+
+<p>If your RAID controller is not supported, please contribute information about it so we can add support for it to this tool.</p>
 
 <code>
 # Virtualization #############################################
