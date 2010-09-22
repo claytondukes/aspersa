@@ -25,18 +25,28 @@
 
 <p>The <em>align</em> tool is a simple way to ensure that data is aligned in columns.  It is written in Perl.  It reads input from files specified on the command line, or from standard input.</p>
 
-<p>It works by reading the entire input into memory, and dividing each line into words.  It then inspects the lines to derive the following information:</p>
+<h2>Command-Line Options and Environment Variables</h2>
+
+<p>This tool has no options or environment variables.</p>
+
+<h2>How it Works</h2>
+
+<p>This tool works by reading the entire input into memory, and dividing each line into words.  It then inspects the lines to derive the following information:</p>
 
 <ul>
 <li>The maximum width of each column</li>
-<li>The maximum number of words in any line</li>
+<li>The most frequent number of words in any line</li>
 </ul>
 
-<p>It uses these to create a formatting specification based on the line with the most words, and then prints each line with that format.  Lines that don't have enough words are not printed. There must be at least two lines of input for the tool to produce any output.</p>
+<p>It uses these to create a formatting specification based on the line with the most words, and then prints each line with that format.  Lines that don't have the right number of words are discarded.</p>
 
-<p>The above algorithm has some important consequences.  Reading the entire input before formatting means that you can't use it for aligning data as it is generated incrementally, and you probably don't want to use this tool on very large files.  Discarding lines with the wrong number of words means that you must be careful about the input.</p>
+<p>The tool assumes that the first line is a header line, and the second line is the first line of "real" content.  It formats columns as right-aligned if the value in the second row looks numeric, and left-aligned otherwise.  Therefore, there must be at least two lines of input for the tool to produce any output.</p>
 
-<p>An example of what this tool is useful for is aligning <em>vmstat</em> output, which tends to be printed in column widths that make it very hard to read by default.  Here's an example of raw vmstat output:</p>
+<p>The tool's behavior has some important consequences.  Reading the entire input before formatting means that you can't use it for aligning data as it is generated incrementally, and you probably don't want to use this tool on very large files.  Discarding lines with the wrong number of words means that some lines won't be printed.</p>
+
+<h2>Example Usage</h2>
+
+<p>An example of what this tool is useful for is aligning <em>vmstat</em> output, which tends to be printed in column widths that make it very hard to read by default.  Here's an example of raw vmstat output.  Notice how the CPU usage columns are misaligned, and the cache column is so wide that 'si' appears under the 'so' heading:</p>
 
 <code>
 procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu------
@@ -52,7 +62,7 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
 25  1    288 11907768  84248 13246424    0    0 16156     5  254 45958 54  5 41  0  0
 </code>
 
-<p>After processing with <em>align</em>, the output looks much easier to read:</p>
+<p>After processing with <em>align</em>, the output is much easier to read:</p>
 
 <code>
  r  b swpd     free  buff    cache si so    bi  bo  in    cs us sy  id wa st
