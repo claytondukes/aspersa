@@ -39,16 +39,17 @@ h3 {font: bold 1em Tahoma,sans-serif;}
 form,input {margin: 0; padding: 0; display: inline;}
 
 code {
-	background: #FFF;
-	border: 1px solid #EEE;
-	border-left: 6px solid #CCC;
-	color: #666;
-	display: block;
 	font: normal 1em Courier,monospace;
 	line-height: 1.6em;
 	margin-bottom: 12px;
-	padding: 8px 10px;
 	white-space: pre;
+   display: block;
+   width: 95%;
+   background: #222;
+   border-left: 6px solid #1664d9;
+   color: #0c0;
+   padding: 10px;
+   overflow:auto;
 }
 
 blockquote {
@@ -129,7 +130,7 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 /* content */
 .content {
 	float: right;
-	width: 538px;
+	width: 588px;
 }
 .content .descr {
 	color: #664;
@@ -145,7 +146,7 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 /* navigation */
 .navigation {
 	float: left;
-	width: 210px;
+	width: 160px; /*was: 210*/
 }
 .navigation h2 {
 	color: #5A5A43;
