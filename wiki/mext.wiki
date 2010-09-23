@@ -1,6 +1,0 @@
-﻿Format and relative-ize output from `mysqladmin extended-status` for easy consumption.  See [http://www.xaprb.com/blog/2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/ this blog post].  mext2 is a rewrite that tries to work around bugs in getargs on different operating systems, but it isn't really supported or maintained.
-
-{{{
-wget http://aspersa.googlecode.com/svn/trunk/mext
-wget http://aspersa.googlecode.com/svn/trunk/mext2
-}}}
