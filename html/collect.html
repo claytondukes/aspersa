@@ -23,7 +23,19 @@
 	<div class="main">		
 		<div class="content">
 
-This manual page is a placeholder until we write more content for it.
+<p>The <em>collect</em> tool gathers a variety of information about a system for a short time. It is typically executed when the <a href="stalk.html"><em>stalk</em></a> tool detects a condition and wants to collect information to assist in diagnosis.</p>
+
+<h2>Command-Line Options and Environment Variables</h2>
+
+<p>This tool does not have any command-line options, but it does have configuration options embedded in the top of the code, so it can be customized.</p>
+
+<h2>How it Works</h2>
+
+<p>This tool first ensures that the disk where it's storing its data is not getting too full.  If there is not enough free space, it exits with an error message.  Barring that, it creates a lock to ensure that only one instance runs at a time, and then saves a variety of performance and status data into files in the configured directory.  Files are named with a timestamp so they can be grouped together.  The tool is MySQL-centric by default, and gathers quite a bit of diagnostic data that's useful for understanding the behavior of a MySQL database server.</p>
+
+<h2>Example Usage</h2>
+
+<p>To use this tool, simply configure it as desired and execute it with no options.  Check the comments in the top of the source to see how to configure it.</p>
 
 		</div>
 		<div class="navigation">

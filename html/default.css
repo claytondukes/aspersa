@@ -28,7 +28,7 @@ body {
 	padding-top: 24px;
 }
 
-p,code,ul,dl {padding-bottom: 1.2em;}
+p,code,ul,dl,ol {padding-bottom: 1.2em;}
 
 li {list-style: none;}
 
@@ -147,7 +147,12 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 }
 .content li {
 	margin-left: 18px;
+}
+.content ul li {
    list-style: disc;
+}
+.content ol li {
+   list-style: decimal;
 }
 .content p {font-family: "Lucida Sans Unicode",sans-serif;}
 
