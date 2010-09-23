@@ -1,5 +1,0 @@
-﻿Subtract numbers in each line of text from the line before, so you can see incremental differences.  Useful for tasks such as interpreting raw data from /proc/diskstats.  See [http://www.xaprb.com/blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/ this blog post].
-
-{{{
-wget http://aspersa.googlecode.com/svn/trunk/rel
-}}}
