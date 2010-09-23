@@ -23,7 +23,49 @@
 	<div class="main">		
 		<div class="content">
 
-This manual page is a placeholder until we write more content for it.
+<p>The <em>mext</em> tool is a handy way to look at many samples of MySQL's SHOW GLOBAL STATUS side by side.</p>
+
+<h2>Command-Line Options and Environment Variables</h2>
+
+<p>The tool has the following command-line options:</p>
+
+<dl>
+<dt>-r</dt> <dd>Causes each sample to be subtracted from the previous sample, so you see the difference between them.</dd>
+</dl>
+
+<p>Any additional command-line arguments passed to the tool, after the standard Unix double-dash option to indicate the end of option processing, will be executed as a command.</p>
+
+<h2>How it Works</h2>
+
+<p>The <em>mext</em> tool executes the command you specify, and reads through the result one line at a time.  It places each line into a temporary file.  When it finds a blank line, it assumes that a new sample of SHOW GLOBAL STATUS is starting, and it creates a new temporary file.  At the end of this process, it has a number of temporary files.  It joins the temporary files together side-by-side and prints the result.  If the -r option is given, it first subtracts each sample from the one after it before printing results.</p>
+
+<h2>Example Usage</h2>
+
+<p>You can use this tool to gather and column-ify data, or you can make it column-ify data that has already been gathered.  Try the following commands:</p>
+
+<code>
+# Gather 3 samples at 10-second intervals, and place them side by side:
+mext -- mysqladmin ext -c3 -i10
+
+# Ditto, but show relative differences between samples:
+mext -- mysqladmin ext -c3 -i10 -r
+
+# Show relative diff between samples previously saved in mext-file:
+mext -r -- cat mext-file
+</code>
+
+<p>The output will look something like the following:</p>
+
+<code>
+Aborted_clients                             156    0    0
+Aborted_connects                           1310    0    0
+Binlog_cache_disk_use                         0    0    0
+Binlog_cache_use                         103261    0    0
+Bytes_received                       1674663578   35   35
+Bytes_sent                          10710808254 6586 6586
+</code>
+
+<p>The more samples there are, the more columns there will be.</p>
 
 		</div>
 		<div class="navigation">
