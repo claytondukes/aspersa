@@ -38,9 +38,9 @@
 <li>The most frequent number of words in any line</li>
 </ul>
 
-<p>It uses these to create a formatting specification based on the line with the most words, and then prints each line with that format.  Lines that don't have the right number of words are discarded.</p>
+<p>It uses these to create a formatting specification based on the most frequent number of words, and then prints each conforming line with that format.  Lines that don't have the right number of words are discarded.</p>
 
-<p>The tool assumes that the first line is a header line, and the second line is the first line of "real" content.  It formats columns as right-aligned if the value in the second row looks numeric, and left-aligned otherwise.  Therefore, there must be at least two lines of input for the tool to produce any output.</p>
+<p>The tool assumes that the first conforming line is a header line, and the second is the first line of "real" content.  It formats columns as right-aligned if the value in the second row looks numeric, and left-aligned otherwise.  Therefore, there must be at least two lines of input for the tool to produce any output.</p>
 
 <p>The tool's behavior has some important consequences.  Reading the entire input before formatting means that you can't use it for aligning data as it is generated incrementally, and you probably don't want to use this tool on very large files.  Discarding lines with the wrong number of words means that some lines won't be printed.</p>
 
