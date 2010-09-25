@@ -85,20 +85,20 @@ Architecture | CPU = 64-bit, OS = 64-bit
         Used | 6.82G
   Swappiness | vm.swappiness = 0
  DirtyPolicy | vm.dirty_ratio = 40, vm.dirty_background_ratio = 10
-  Locator Size     Speed            Form Factor   Type          Type Detail
-  ======= ======== ================ ============= ============= ===========
-  DIMM_A2  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_A3  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_A5  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_A6  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B2  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B3  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B5  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B6  4096 MB  1066 MHz (0.9 ns) DIMM          <OUT OF SPEC> Synchronous
-  DIMM_A1  <EMPTY>  Unknown          DIMM          <OUT OF SPEC> Synchronous
-  DIMM_A4  <EMPTY>  Unknown          DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B1  <EMPTY>  Unknown          DIMM          <OUT OF SPEC> Synchronous
-  DIMM_B4  <EMPTY>  Unknown          DIMM          <OUT OF SPEC> Synchronous
+  Locator   Size     Speed             Form Factor   Type          Type Detail
+  ========= ======== ================= ============= ============= ===========
+  DIMM_A2   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_A3   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_A5   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_A6   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B2   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B3   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B5   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B6   4096 MB  1066 MHz (0.9 ns) DIMM          {OUT OF SPEC} Synchronous
+  DIMM_A1   {EMPTY}  Unknown           DIMM          {OUT OF SPEC} Synchronous
+  DIMM_A4   {EMPTY}  Unknown           DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B1   {EMPTY}  Unknown           DIMM          {OUT OF SPEC} Synchronous
+  DIMM_B4   {EMPTY}  Unknown           DIMM          {OUT OF SPEC} Synchronous
 </code>
 
 <p>Information about memory is gathered from <em>free</em>.  The <u>Used</u> statistic is the total of the rss sizes displayed by <em>ps</em>.  On Linux, the swapiness settings are gathered from <em>sysctl</em>.  The final portion of this section is a table of the DIMMs, which comes from <em>dmidecode</em>.</p>
