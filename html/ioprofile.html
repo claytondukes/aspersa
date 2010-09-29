@@ -25,6 +25,8 @@
 
 <p>The <em>ioprofile</em> tool captures a process's I/O activity through <em>lsof</em> and <em>strace</em> and summarizes it.  The result is a tabular display that shows you where the process spent its time on I/O operations.  It performs a cross-tabulation ("pivot table") on the I/O operations to summarize them.</p>
 
+<p>You might need to be careful with this tool.  <em>strace</em> is generally pretty low-overhead, but there is always a chance of a bug that could cause problems with the process you're profiling.</p>
+
 <h2>Command-Line Options and Environment Variables</h2>
 
 <p>The tool has the following command-line options, which must come <em>first</em> on the command-line, before any filenames:</p>
