@@ -30,11 +30,12 @@
 <p>The tool has the following command-line options:</p>
 
 <dl>
-<dt>-p PID</dt><dd>Specifies a process ID to trace and summarize. Causes -b to be ignored.</dd>
 <dt>-b BINARY</dt><dd>Specifies the name of a process to trace and summarize.  The default value is 'mysqld'.</dd>
 <dt>-i ITERATIONS</dt><dd>Specifies how many times to get a stack trace from the process.  The default value is 1.</dd>
-<dt>-s SLEEPTIME</dt><dd>Specifies how long to sleep between each iteration, if -i is given.  Default value is 0.</dd>
+<dt>-k KEEPFILE</dt><dd>Specifies a file to hold the stack traces.  The specified file will not be removed when the program finishes, so you can re-analyze it if you wish.</dd>
 <dt>-l MAXLEN</dt><dd>Specifies how many symbols to aggregate from each thread.  Default is unlimited.</dd>
+<dt>-p PID</dt><dd>Specifies a process ID to trace and summarize. Causes -b to be ignored.</dd>
+<dt>-s SLEEPTIME</dt><dd>Specifies how long to sleep between each iteration, if -i is given.  Default value is 0.</dd>
 </dl>
 
 <p>Any additional arguments on the command-line are treated as file names containing the results of a stack trace previously gathered, which is to be summarized.</p>

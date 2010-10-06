@@ -36,6 +36,7 @@
 <dt>-b BINARY</dt><dd>Specifies the name of a process to trace and summarize.  The default value is 'mysqld'.</dd>
 <dt>-c CELL</dt><dd>Specifies what value to place into the cells of the tabular output.  By default, it is 'times', which means that the cells contain the timing information about I/O operations.  You can specify 'count' for a simple count, and 'sizes' for the size of the operations, in bytes.</dd>
 <dt>-g GROUPBY</dt><dd>Specifies the item by which the I/O operations are aggregated.  By default, they are aggregated by 'filename'. You can aggregate them by 'pid' to get a per-thread view of the I/O.</dd>
+<dt>-k KEEPFILE</dt><dd>Specifies a file to hold the <em>strace</em> data.  The specified file will not be removed when the program finishes, so you can re-analyze it if you wish.</dd>
 <dt>-p PID</dt><dd>Specifies a process ID to trace and summarize. Causes -b to be ignored.</dd>
 <dt>-s SLEEPTIME</dt><dd>Specifies how long to profile.  Default value is 30.</dd>
 </dl>
