@@ -35,7 +35,7 @@
 <dt>-a FUNCTION</dt><dd>Specifies the aggregation function to perform on each cell of the tabular output.  By default, it is 'sum', but 'avg' is also available.</dd>
 <dt>-b BINARY</dt><dd>Specifies the name of a process to trace and summarize.  The default value is 'mysqld'.</dd>
 <dt>-c CELL</dt><dd>Specifies what value to place into the cells of the tabular output.  By default, it is 'times', which means that the cells contain the timing information about I/O operations.  You can specify 'count' for a simple count, and 'sizes' for the size of the operations, in bytes.</dd>
-<dt>-g GROUPBY</dt><dd>Specifies the item by which the I/O operations are aggregated.  By default, they are aggregated by 'filename'. You can aggregate them by 'pid' to get a per-thread view of the I/O.</dd>
+<dt>-g GROUPBY</dt><dd>Specifies the item by which the I/O operations are aggregated.  By default, they are aggregated by 'filename'. You can aggregate them by 'pid' to get a per-thread view of the I/O, and by 'all' to get an overall view.</dd>
 <dt>-k KEEPFILE</dt><dd>Specifies a file to hold the <em>strace</em> data.  The specified file will not be removed when the program finishes, so you can re-analyze it if you wish.</dd>
 <dt>-p PID</dt><dd>Specifies a process ID to trace and summarize. Causes -b to be ignored.</dd>
 <dt>-s SLEEPTIME</dt><dd>Specifies how long to profile.  Default value is 30.</dd>
@@ -127,7 +127,7 @@ $ ioprofile -c sizes t/samples/ioprofile-001.txt
        512          0          0        512          0 /data/data/ib_logfile0
 </code>
 
-<p>Finally, it's possible to report by process ID (thread ID), instead of by filename:</p>
+<p>It's also possible to report by process ID (thread ID), instead of by filename:</p>
 
 <code>
 $ ioprofile -g pid t/samples/ioprofile-001.txt
@@ -150,6 +150,17 @@ $ ioprofile -g pid t/samples/ioprofile-001.txt
   0.001636   0.000000   0.000000   0.001636   0.000000 2377
   0.000982   0.000000   0.000000   0.000982   0.000000 2378
   0.000141   0.000000   0.000000   0.000141   0.000000 2365
+</code>
+
+<p>Finally, you can aggregate by the entire dataset, so you simply get the function calls and the desired statistic, not broken out by filename or thread ID:</p>
+
+<code>
+$ ioprofile -g all t/samples/ioprofile-001.txt 
+ 18.561144 TOTAL
+ 18.528886 pread
+  0.020868 write
+  0.009667 pwrite
+  0.001723 read
 </code>
 
 		</div>
