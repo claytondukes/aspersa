@@ -201,3 +201,29 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 .footer a:hover {color: #FFC;}
 .footer .right, .footer .right a {color: #C8C8C3;}
 .footer .right a:hover {color: #F7F7F2;}
+
+#lightbox{
+	background-color:#eee;
+	padding: 10px;
+	border-bottom: 2px solid #666;
+	border-right: 2px solid #666;
+	}
+#lightboxDetails{
+	font-size: 0.8em;
+	padding-top: 0.4em;
+	}	
+#lightboxCaption{ float: left; }
+#keyboardMsg{ float: right; }
+#closeButton{ top: 5px; right: 5px; }
+
+#lightbox img{ border: none; clear: both;} 
+#overlay img{ border: none; }
+
+#overlay{ background-image: url(img/overlay.png); }
+
+* html #overlay{
+	background-color: #333;
+	back\ground-color: transparent;
+	background-image: url(blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/overlay.png", sizingMethod="scale");
+	}
