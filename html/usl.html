@@ -57,7 +57,7 @@ Lines beginning  with a # character are commented out.</p>
 
 <p>Next, the tool transforms the input data, performs least-squares regression against it, and plots that.  The coefficients for the resulting fitted curve are 'a' and 'b', respectively.  The tool prints these out, along with the coefficient of determination to show how closely the line fits the points (the R-squared value).</p>
 
-<p>Finally, the tool derives the sigma and kappa parameters to the Universal Scalability Law, and plots the source data and the model.</p>
+<p>The tool uses the 'a' and 'b' coefficients to approximate the 'sigma' and 'kappa' parameters to the Universal Scalability Law.  It then performs another least-squares regression against the Law, with the approximated parameters as starting points.  (It needs to generate reasonably good starting points, or <em>gnuplot</em> can have trouble with the regression; it can get stuck in a local maximum that is very wrong.)  After the second least-squares regression, the tool captures the 'sigma' and 'kappa' parameters, and plots the source data and the model.</p>
 
 <h2 id='conversions'>Conversion Functions</h2>
 
@@ -133,12 +133,13 @@ b       0.0164629
 R^2     0.998991
 </code>
 
-<p>Next you should look at the graphs to see how closely the polynomial fits the deviation from linearity, and ensure that it looks like the source data is actually parabolic and the line fits the points well.  Inspect the residuals (the difference between the fitted curve and the transformed source data points).  Ensure that the residuals appear randomly distributed, and that there is no apparent pattern that might indicate the source data should really not be accepted as an input.  The residuals-squared is also plotted, and can help you identify outliers if you need to scrub the input data.</p>
+<p>Next you should look at the graphs to see how closely the polynomial fits the deviation from linearity, and ensure that it looks like the source data is actually parabolic and the line fits the points well.  Inspect the residuals (the difference between the fitted curve and the transformed source data points).  Ensure that the residuals appear randomly distributed, and that there is no apparent pattern that might indicate the source data should really not be accepted as an input.  The residuals-squared is also plotted, and can help you identify outliers if you need to scrub the input data.  And the residuals-squared is plotted against the Universal Scalability Law as well.</p>
 
 <p style="text-align:center">
  <a href='img/deviation.png' rel='lightbox'><img src='img/thumb-deviation.png' width="160" height="120" /></a>
- <a href='img/residuals.png' rel='lightbox'><img src='img/thumb-residuals.png' width="160" height="120" /></a>
- <a href='img/residuals-squared.png' rel='lightbox'><img src='img/thumb-residuals-squared.png' width="160" height="120" /></a>
+ <a href='img/quadratic-residuals.png' rel='lightbox'><img src='img/thumb-quadratic-residuals.png' width="160" height="120" /></a> <br />
+ <a href='img/quadratic-residuals-squared.png' rel='lightbox'><img src='img/thumb-quadratic-residuals-squared.png' width="160" height="120" /></a>
+ <a href='img/usl-residuals-squared.png' rel='lightbox'><img src='img/thumb-usl-residuals-squared.png' width="160" height="120" /></a>
 </p>
 
 <p>You can view the model-vs-actual graph to see the end result.  The red and green lines are the estimated errors from the least-squares regression.</p>
