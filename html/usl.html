@@ -75,8 +75,19 @@ Lines beginning  with a # character are commented out.</p>
 <code>
 while sleep 10; do
    date '+TS %s.%N' | tee -a status &gt;&gt; processlist
-   mysql -e 'show global status' &gt;&gt; status &amp;
-   mysql -e 'show full processlist\G' &gt;&gt; processlist &amp;
+   mysql -e 'SHOW GLOBAL STATUS' &gt;&gt; status &amp;
+   mysql -e 'SHOW FULL PROCESSLIST\G' &gt;&gt; processlist &amp;
+done
+</code>
+
+<p>That script might create large files.  For most purposes, the following is adequate:</p>
+
+<code>
+mysql -e 'SHOW FULL PROCESSLIST\G' &gt; processlist
+while sleep 10; do
+  date '+TS %s.%N' &gt;&gt; status
+  mysql -e 'SHOW GLOBAL STATUS' \
+    | grep -e Questions -e Uptime - e Threads_running &gt;&gt; status
 done
 </code>
 
