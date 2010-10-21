@@ -89,7 +89,7 @@ mysql -e 'SHOW FULL PROCESSLIST\G' &gt; processlist
 while sleep 10; do
   date '+TS %s.%N' &gt;&gt; status
   mysql -e 'SHOW GLOBAL STATUS' \
-    | grep -e Questions -e Uptime - e Threads_running &gt;&gt; status
+    | grep -e Questions -e Uptime -e Threads_running &gt;&gt; status
 done
 </code>
 
