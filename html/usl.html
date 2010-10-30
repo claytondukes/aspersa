@@ -40,12 +40,15 @@
 <dt>-i INTERVAL</dt><dd>When -c is given, specifies to aggregate the input data into intervals of -i seconds.  This can be useful for smoothing data.  See <a href="#conversions">Conversion Functions</a> for more details.</dd>
 <dt>-k KEEPFILE</dt><dd>Specifies a file to hold the input data.  The specified file will not be removed when the program finishes, so you can re-analyze it if you wish.  This is handy when using -c to transform the data: you can run the transformation once, and then re-analyze the data many times.</dd>
 <dt>-l LIMIT</dt><dd>Set the upper limit of the X axis in the final plot.</dd>
+<dt>-L COLOR</dt><dd>The color for plotting points; when color is used, default is "lt rgb #80B000".</dd>
 <dt>-m THREADS</dt><dd>When -c is given, enforces a maximum concurrency of THREADS in the input data.  Useful for filtering outliers such as instantaneous spikes of very high concurrency.</dd>
 <dt>-n ADJUSTMENT</dt><dd>When -c is given, subtracts ADJUSTMENT from the concurrency.  Useful for compensating for tasks in the system that aren't really part of the workload you are measuring.</dd>
 <dt>-o ONLY</dt><dd>Only produce plots specified in this comma-separated list.</dd>
 <dt>-p PREFIX</dt><dd>A filename prefix for the generated images.</dd>
 <dt>-P PORT</dt><dd>The port number for -c tcpdump.</dd>
+<dt>-r</dt><dd>Render pdf and eps plots in color.</dd>
 <dt>-t FILETYPE</dt><dd>Type of images to generate.  The default is png, but you can also specify eps and pdf.</dd>
+<dt>-T POINTTYPE</dt><dd>The gnuplot point type and options for the plots; default is 6.</dd>
 <dt>-x ADJUSTMENT</dt><dd>Multiply the C(1) measurement by this factor.  Useful if the tool's interpolated value for C(1) is wrong.</dt>
 </dl>
 
