@@ -82,7 +82,7 @@ Architecture | CPU = 64-bit, OS = 64-bit
         Free | 447.26M
         Used | physical = 30.99G, swap = 288.00k, virtual = 30.99G
      Buffers | 141.09M
-      Caches | 23.52G
+      Caches | 23.52G Dirty: 4280 kB
         Used | 6.82G
   Swappiness | vm.swappiness = 0
  DirtyPolicy | vm.dirty_ratio = 40, vm.dirty_background_ratio = 10
@@ -102,7 +102,7 @@ Architecture | CPU = 64-bit, OS = 64-bit
   DIMM_B4   {EMPTY}  Unknown           DIMM          {OUT OF SPEC} Synchronous
 </code>
 
-<p>Information about memory is gathered from <em>free</em>.  The <u>Used</u> statistic is the total of the rss sizes displayed by <em>ps</em>.  On Linux, the swapiness settings are gathered from <em>sysctl</em>.  The final portion of this section is a table of the DIMMs, which comes from <em>dmidecode</em>.</p>
+<p>Information about memory is gathered from <em>free</em>.  The <u>Used</u> statistic is the total of the rss sizes displayed by <em>ps</em>.  The Dirty statistic for the cached value comes from /proc/meminfo.  On Linux, the swappiness settings are gathered from <em>sysctl</em>.  The final portion of this section is a table of the DIMMs, which comes from <em>dmidecode</em>.</p>
 
 <code>
 # Mounted Filesystems ########################################
@@ -231,7 +231,7 @@ environment variable includes "NETWORK", then this section is skipped.</p>
 </code>
 
 <p>This section shows a summary of network connections, retrieved from
-<em>netstat</em>.  There are two sub-sections showing how many connections there
+<em>netstat</em> and <a href="mysql-summary.html#fuzzy">fuzzy-rounded</a>. There are two sub-sections showing how many connections there
 are per origin and destination IP address, and a sub-section showing the count
 of ports in use.  In this case, none of the ports has a count greater than 1,
 but in examples such as MySQL or web servers, you will see many incoming
@@ -258,20 +258,21 @@ what processes are actively using CPU time.   If the ASPERSA_SKIP environment
 variable includes "PROCESS", then this section is skipped.</p>
 
 <code>
-# Simplified vmstat (wait please) ############################
+# Simplified and fuzzy rounded vmstat (wait please) ##########
   procs  ---swap-- -----io---- ---system---- --------cpu--------
-   r  b    si   so    bi    bo     in     cs  us  sy  id  wa  st
-   0  0     0    0    13    27      1      2   1   0  98   0   0
-   0  0     0    0     0   392    107    624   0   0 100   0   0
-   0  0     0    0     0    24    128    655   0   0 100   0   0
-   0  0     0    0     0     0    101    615   0   0 100   0   0
-   0  0     0    0     0     0    123    655   0   0 100   0   0
+   r  b    si   so    bi    bo     ir     cs  us  sy  il  wa  st
+   0  0     0    0     8    10    125    175   2   1 100   1   0
+   1  0     0    0     0     0     90    100   0   0 100   0   0
+   1  0     0    0     0    50    225    250   1   1 100   3   0
+   0  0     0    0     0     0     60    100   0   0 100   0   0
+   1  0     0    0     0     0    225    250   1   1 100   0   0
 # The End ####################################################
 </code>
 
 <p>This section is a trimmed-down sample of <em>vmstat 1 5</em>, so you can see
-the general status of the system at present.  If the ASPERSA_SKIP environment
-variable includes "PROCESS", then this section is skipped.</p>
+the general status of the system at present.  The values in the table are <a
+href="mysql-summary.html#fuzzy">fuzzy-rounded</a>.  If the ASPERSA_SKIP
+environment variable includes "PROCESS", then this section is skipped.</p>
 
 		</div>
 		<div class="navigation">
