@@ -44,3 +44,5 @@ To use the code, either run lib/options's function generate_parse_options() agai
 {{{
    . <(generate_parse_options)
 }}}
+
+After doing that, an environment variable OPT_<option_name> is set for each option.  For example -b sets OPT_b.
