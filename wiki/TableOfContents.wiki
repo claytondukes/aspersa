@@ -1,4 +1,5 @@
   * [UnitTestSystem Unit Test System]
+  * [OptionParsingLibrary Option Parsing Library]
   * Meta
     * [http://code.google.com/p/aspersa/w/list List & Search Wiki Pages]
     * [http://code.google.com/p/aspersa/w/edit New Wiki Page] (requires SVN commit rights, inquire on the mailing list)
