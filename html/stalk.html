@@ -23,19 +23,11 @@
 	<div class="main">		
 		<div class="content">
 
-<p>The <em>stalk</em> tool watches for a condition to become true, and when it does, executes a script.  By default it executes the <a href="collect.html"><em>collect</em></a> tool, but it is very flexible.  This tool is useful for gathering diagnostic data when an infrequent event occurs, so an expert person can review the data later.</p>
+<p>The <em>stalk</em> tool watches for a condition to become true, and when it does, executes a script.  By default it executes the <a href="collect.html"><em>collect</em></a> tool, but that can be customized.  This tool is useful for gathering diagnostic data when an infrequent event occurs, so an expert person can review the data later.</p>
 
 <h2>Command-Line Options and Environment Variables</h2>
 
-<p>The tool accepts positional command-line arguments, which it interprets as follows:</p>
-
-<dl>
-<dt>$1</dt><dd>The threshold at which to take action.  Default is 100.</dd>
-<dt>$2</dt><dd>The interval between checks, in seconds.  Default is 30 seconds.</dd>
-<dt>$3</dt><dd>The variable to compare to the threshold.  Default is Threads_connected.</dd>
-</dl>
-
-<p>The exact functionality of those items will be discussed later in this document.</p>
+<p>The tool accepts no command-line arguments or environment variables, and can be configured by editing the source code or by creating a file of the same name with an extension of '.conf' that it will source to set variables.</p>
 
 <h2>How it Works</h2>
 
