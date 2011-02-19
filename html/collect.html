@@ -27,15 +27,23 @@
 
 <h2>Command-Line Options and Environment Variables</h2>
 
-<p>This tool does not have any command-line options, but it does have configuration options embedded in the top of the code, so it can be customized.</p>
+<p>This tool accepts the following command-line options, <strong>all of which are required and must be specified</strong>:</p>
+
+<dl>
+<dt>-d DESTINATION</dt><dd>The directory where the collected data should be stored.  It must exist.</dd>
+<dt>-i INTERVAL</dt><dd>How many seconds to collect data before quitting.</dd>
+<dt>-g</dt><dd>"yes" or "no": whether to collect GDB stack traces.</dd>
+<dt>-o</dt><dd>"yes" or "no": whether to collect oprofile data.  This disables -s.</dd>
+<dt>-s</dt><dd>"yes" or "no": whether to collect strace data.</dd>
+</dl>
 
 <h2>How it Works</h2>
 
-<p>This tool first ensures that the disk where it's storing its data is not getting too full.  If there is not enough free space, it exits with an error message.  Barring that, it creates a lock to ensure that only one instance runs at a time, and then saves a variety of performance and status data into files in the configured directory.  Files are named with a timestamp so they can be grouped together.  The tool is MySQL-centric by default, and gathers quite a bit of diagnostic data that's useful for understanding the behavior of a MySQL database server.</p>
+<p>This tool creates a lock to ensure that only one instance runs at a time, and then saves a variety of performance and status data into files in the configured directory.  Files are named with a timestamp so they can be grouped together.  The tool is MySQL-centric by default, and gathers quite a bit of diagnostic data that's useful for understanding the behavior of a MySQL database server.</p>
 
 <h2>Example Usage</h2>
 
-<p>To use this tool, simply configure it as desired and execute it with no options.  Check the comments in the top of the source to see how to configure it.</p>
+<p>To use this tool, simply execute it with the required options.  It is usually executed by another tool, such as <a href="stalk.html">the stalk tool</a>, instead of being called directly.</p>
 
 		</div>
 		<div class="navigation">

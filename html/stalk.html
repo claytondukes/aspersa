@@ -36,7 +36,7 @@
 <ol>
 <li>Loop infinitely, sleeping between iterations.</li>
 <li>In each iteration, run some command and get the output.</li>
-<li>If the command fails or the output is larger than the threshold, execute the collection script.</li>
+<li>If the command fails or the output is larger than the threshold, execute the collection script; but do not execute if the destination disk is too full.</li>
 </ol>
 
 <p>By default, the tool is configured to execute <em>mysqladmin extended-status</em> and extract the value of the Threads_connected variable; if this is greater than 100, it runs the collection script.  This is really just placeholder code, and almost certainly needs to be customized!</p>
