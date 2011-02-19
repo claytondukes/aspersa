@@ -176,8 +176,6 @@ Enter a disk/device pattern: c0d1
 
 <p>It looks like this device's usage is fairly consistent from second to second &mdash; it is not spiking up and down.  But the device is quite busy, mostly with reads; there are more than ten reads at a time, on average, and the response time of those reads is very slow, compared to the writes.  In fact, this is a RAID controller with a battery-backed write cache, and the writes are simply going to the cache and returning, but of course the reads have to be serviced from the spindles, and that is rather slow.  (This device is still performing more slowly than it should.  It turned out on deeper diagnosis that something was wrong with the hardware.)</p>
 
-<p>The greater-than-100% busy time looks like a bug in the diskstats program; that needs to be fixed.</p>
-
 <p>Now, what if we had a large sample, once per second, that was collected over tens of minutes?  That would scroll off the screen in sample mode.  To control this, we can set the size of the window that encloses a 'sample'.  Press the 'i' key, and set the sample size:</p>
 
 <code>
