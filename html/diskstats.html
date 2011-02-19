@@ -49,12 +49,12 @@ The default value is 'disk', which (unlike <em>iostat</em>) shows one line for e
 
 <p>This program works in two main modes.  One way is to process a file with saved disk statistics, which you specify on the command line.  The other way is to start a background process gathering samples at intervals and saving them into a file, and process this file in the foreground.  In both cases, the tool is interactively controlled by keystrokes, so you can redisplay and slice the data flexibly and easily.  If the tool is not attached to a terminal, it doesn't run interactively; it just processes and prints its output, then exits.  Otherwise it loops until you exit with the 'q' key.</p>
 
-<p>The input is simple: timestamp lines in the format <em>TS <u>timestamp.nanoseconds</u> <u>ISO8601-timestamp</u></em>, followed by the contents of /proc/diskstats.  You can generate a sample file easily as follows:</p>
+<p>The input is simple: the contents of /proc/diskstats, followed by timestamp lines in the format <em>TS <u>timestamp.nanoseconds</u> <u>ISO8601-timestamp</u></em>.  You can generate a sample file easily as follows:</p>
 
 <code>
 $ while sleep 1; do
-   date +'TS %s.%N %F %T' &gt;&gt; stats.txt
    cat /proc/diskstats &gt;&gt; stats.txt
+   date +'TS %s.%N %F %T' &gt;&gt; stats.txt
 done
 </code>
 
