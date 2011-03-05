@@ -59,7 +59,7 @@
 <p>To use this tool, simply execute it and specify the directory that contains the samples from <em>collect</em>.  The tool will print out a summary of the sample you select, for example:</pre>
 
 <code>
-===================== 2011_02_08_17_18_11 DEFAULT =========================
+======== localhost at 2011_02_08_17_18_11 DEFAULT (5 of 5) ========
 --diskstats--
   #ts device rd_mb_s rd_cnc   rd_rt wr_mb_s wr_cnc   wr_rt busy in_prg
  {29} sda3      17.2    0.4     0.4     5.0    0.1     0.4  33%      0
@@ -109,6 +109,7 @@ wa 5% . 0% 5% . . 0% 5% . . . 0% 15% 0% . . . . . . 5% 15% 5% 20% 5% 0% . . 5% .
 <p>The report on the sample includes the following items:</p>
 
 <ul>
+<li>A header line showing the host, currently selected timestamp, and the number of the current timestamp relative to the total number of timestamps.</li>
 <li>The diskstats report on the device that read and wrote the most data. The line following shows the busy% for this device for each sample gathered, rounded to the nearest 5% and de-duplicated by replacing repeated values with dots.</li>
 <li>Pretty-printed vmstat output. The line following shows the CPU wa% for each sample gathered, rounded to the nearest 5% and de-duplicated by replacing repeated values with dots.</li>
 <li>Some important information from InnoDB status, including aggregations of mutex waits.</li>
