@@ -63,10 +63,12 @@
 --diskstats--
   #ts device rd_mb_s rd_cnc   rd_rt wr_mb_s wr_cnc   wr_rt busy in_prg
  {29} sda3      17.2    0.4     0.4     5.0    0.1     0.4  33%      0
+ sda3 35% . . . . . . . . . . . . 40% . 30% . . 35% . . . . . . . . . . .
 --vmstat--
  r b swpd   free   buff   cache si so    bi   bo    in    cs us sy id wa st
 10 1  176 115728 465564 2106728  0  0   791  220     0     0  3  1 94  1  0
  8 0  176 100464 467796 2118020  0  0 17543 4974 16410 24419  9  4 85  2  0
+wa 5% . 0% 5% . . 0% 5% . . . 0% 15% 0% . . . . . . 5% 15% 5% 20% 5% 0% . . 5% .
 --innodb--
     0 queries inside InnoDB, 0 queries in queue
     Main thread: sleeping, pending reads 4, writes 0, flush 0
@@ -106,8 +108,8 @@
 <p>The report on the sample includes the following items:</p>
 
 <ul>
-<li>The diskstats report on the device that read and wrote the most data.</li>
-<li>Pretty-printed vmstat output.</li>
+<li>The diskstats report on the device that read and wrote the most data. The line following shows the busy% for this device for each sample gathered, rounded to the nearest 5% and de-duplicated by replacing repeated values with dots.</li>
+<li>Pretty-printed vmstat output. The line following shows the CPU wa% for each sample gathered, rounded to the nearest 5% and de-duplicated by replacing repeated values with dots.</li>
 <li>Some important information from InnoDB status, including aggregations of mutex waits.</li>
 <li>Counts of the top states and commands from the processlist.</li>
 <li>The top stack traces, as shown by <a href="pmp.html">pmp</a>.</li>
